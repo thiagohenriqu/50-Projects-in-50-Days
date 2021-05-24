@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
+:root {
+  --esquerda-bg-color: rgba(87, 84, 236, 0.7);
+  --direita-bg-color: rgba(43, 43, 43, 0.8);
+  --esquerda-btn-hover-color: rgba(87, 84, 236, 1);
+  --direita-btn-hover-color: rgba(28, 122, 28, 1);
+  --hover-width: 75%;
+  --other-width: 25%;
+  --speed: 1000ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+h1 {
+  font-size: 4rem;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.btn {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  color: #fff;
+  border: #fff solid 0.2rem;
+  font-size: 1rem;
+  width: 15rem;
+  padding: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 50px;
+}
+
+.split.esquerda .btn:hover {
+  background-color: var(--esquerda-btn-hover-color);
+  border-color: var(--esquerda-btn-hover-color);
+  transition: 1s ease;
+}
+
+.split.esquerda .btn:not(:hover) {
+  transition: 1s ease;
+}
+
+.split.direita .btn:hover {
+  background-color: var(--direita-btn-hover-color);
+  border-color: var(--direita-btn-hover-color);
+  transition: 1s ease;
+}
+
+.split.direita .btn:not(:hover) {
+  transition: 1s ease;
+}
+
+.split.direita,
+.split.esquerda,
+.split.direita::before,
+.split.esquerda::before {
+  transition: all var(--speed) ease-in-out;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #333;
+}
+
+.split {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.split.esquerda {
+  left: 0;
+  background: url("https://s2.glbimg.com/5412ft5nc5QPrG44sEvPUay_-3A=/0x0:1279x720/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/v/p/BLZh9QQ62E0I8JEHb75g/ps5.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split.esquerda::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--esquerda-bg-color);
+}
+
+.split.direita {
+  right: 0;
+  background: url("https://pplware.sapo.pt/wp-content/uploads/2020/06/Xbox-Series-X.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split.direita::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--direita-bg-color);
+}
+
+.hover-esquerda .esquerda {
+  width: var(--hover-width);
+}
+
+.hover-esquerda .direita {
+  width: var(--other-width);
+}
+
+.hover-direita .direita {
+  width: var(--hover-width);
+}
+
+.hover-direita .esquerda {
+  width: var(--other-width);
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+    top: 30%;
+  }
+
+  .btn {
+    padding: 1.2rem;
+    width: 12rem;
+  }
+}
