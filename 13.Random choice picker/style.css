@@ -5,12 +5,12 @@
 }
 
 body {
-  background-color: #d05353;
+  background-color: #282830;
   font-family: "Poppins", sans-serif;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   height: 100vh;
   overflow: hidden;
   margin: 0;
@@ -19,6 +19,7 @@ body {
 h3 {
   color: #fff;
   margin: 10px 0 20px;
+  text-align: center;
 }
 
 .container {
@@ -34,21 +35,21 @@ textarea {
   padding: 10px;
   margin: 0 0 20px;
   font-size: 16px;
-  border-radius: 6px;
+  border-radius: 20px;
 }
 
 .tag {
-  background-color: #191919;
+  background-color: #25373d;
   color: #fff;
+  border-radius: 50px;
   padding: 10px 20px;
   margin: 0 5px 10px 0;
-  border-radius: 50px;
   font-size: 14px;
   display: inline-block;
 }
 
 .tag.highlight {
-  background-color: #a23e48;
+  background-color: #60646d;
 }
 
 textarea:focus {
